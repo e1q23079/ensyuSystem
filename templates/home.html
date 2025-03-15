@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勉強会用課題演習システム</title>
+    <style>
+        body {
+            padding: 10px;
+            background-color: rgb(246, 246, 246);
+        }
+        .box{
+            margin: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            border: solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>勉強会用課題演習システム</h2>
+
+    <div class="box">
+        <h3>■出席報告をする</h3>
+        <form action="syusseki" method="post">
+            <p>座席コードを入力して，「出席を報告する」ボタンを押下してください．</p>
+            <label>座席コード</label> <input type="text" name="tableCode">
+            <input type="submit" value="出席を報告する">
+        </form>
+    </div>
+
+    <div class="box">
+        <h3>■演習課題を提出する</h3>
+        <form action="/putkadai" method="post">
+            <p>座席コードを入力して，「演習課題を提出する」ボタンを押下してください．</p>
+            <label>座席コード</label> <input type="text" name="tableCode">
+            <input type="submit" value="演習課題を提出する">
+        </form>
+    </div>
+
+    <div class="box">
+        <h3>■質問をする</h4>
+        <p>座席コードを入力して，「質問する」ボタンを押下してください．</p>
+        <form action="/shitsumon" method="post">
+            <label>座席コード</label> <input type=l"text" name="tableCode"> <input type="submit" value="質問する">
+        </form>
+    </div>
+
+    
+    
+    
+
+</body>
+
+</html>

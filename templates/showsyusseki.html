@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>勉強会用課題演習システム</title>
+        <style>
+            body{
+                padding: 10px;
+                background-color: rgb(246, 246, 246);
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            setTimeout(function(){
+                location.reload();
+            },5000);
+        </script>
+        <h2>勉強会用課題演習システム</h2>
+        <p>出席者数:{{ syussekiNum }}人
+        <p>出席者リスト</p>
+        <table border="1">
+            {% for SYUSSEKI in SYUSSEKI_DB %}
+                <tr><td>{{ SYUSSEKI }}</td><td><a href="/cancelsyusseki/{{ SYUSSEKI_DB.index(SYUSSEKI) }}">出席登録の解除</a></td></tr>  
+            {% endfor %}
+        </table>
+        <br>
+        |<a href="/management">管理画面トップに戻る</a>|
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勉強会用課題演習システム</title>
+    <style>
+        body{
+            padding: 10px;
+            background-color: rgb(246, 246, 246);
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        setTimeout(function(){
+            location.reload();
+        },5000);
+    </script>
+    <h2>勉強会用課題演習システム</h2>
+    <p>出席人数:{{ syussekiNum }}人
+    <p>課題提出人数:{{ kadaiNum }}人
+    <p>ステータス:{{ status }}</p>
+    <p>課題提出者リスト</p>
+    <table border="1">
+        {% for KADAI in KADAI_DB %}
+            <tr><td>{{ KADAI }}</td><td><a href="/cancelkadai/{{ KADAI_DB.index(KADAI) }}">課題を取り消し</a></td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <p>課題未提出者リスト</p>
+    <table border="1">
+        {% for MITEISYUTU in KADAIMITEISYUTU_DB %}
+            <tr><td>{{ MITEISYUTU }}</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    |<a href="/management">管理画面トップに戻る</a>|
+</body>
+</html>
